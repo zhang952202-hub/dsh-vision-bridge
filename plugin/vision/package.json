@@ -1,0 +1,11 @@
+{
+  "name": "dsh-vision-bridge",
+  "version": "1.0.0",
+  "description": "Vision bridge for DeepSeek Harness: analyze_image tool + chat attachment proxy, eyes on a local VLM (Ollama) or any OpenAI-compatible vision endpoint.",
+  "type": "module",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "@deepseek-ai/dsh-tools": "link:<DSH_TOOLS_PATH>"
+  }
+}

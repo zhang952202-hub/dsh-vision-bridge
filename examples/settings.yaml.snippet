@@ -1,0 +1,27 @@
+# 追加到 ~/.dsh/settings.yaml 末尾
+# vision-bridge：聊天里贴图走 shim（需先启动 shim，端口 8900）
+# zhipu-vision：直连智谱 GLM-4.6V，多模态模型，无需 shim
+llm-pi-ai:
+  providers:
+    vision-bridge:
+      displayName: Vision Bridge
+      apiKeyEnv: DEEPSEEK_API_KEY
+      api: openai-completions
+      baseURL: http://127.0.0.1:8900/v1
+      models:
+        - id: deepseek-v4-flash
+          displayName: DeepSeek V4 Flash + Vision
+          contextWindow: 262144
+          maxTokens: 32768
+          input: [text, image]
+    zhipu-vision:
+      displayName: 智谱视觉
+      apiKeyEnv: ZHIPU_API_KEY
+      api: openai-completions
+      baseURL: https://open.bigmodel.cn/api/paas/v4
+      models:
+        - id: glm-4.6v-flash
+          displayName: glm-4.6v-flash
+          contextWindow: 131072
+          maxTokens: 4096
+          input: [text, image]
