@@ -4,6 +4,18 @@
 
 > 本文档是完整的复现步骤总结，任何人按顺序操作即可得到相同环境。
 
+## 快速开始（3 条命令）
+
+前置：Node.js ≥ 22、pnpm、Python ≥ 3.8、dsh（`@deepseek-ai/dsh`）、Ollama（`ollama pull qwen2.5vl:3b`）。
+
+```powershell
+git clone https://github.com/zhang952202-hub/dsh-vision-bridge.git
+cd dsh-vision-bridge
+powershell -ExecutionPolicy Bypass -File install.ps1 -Upstream https://api.deepseek.com -TextModelId deepseek-v4-flash -ApiKeyEnv DEEPSEEK_API_KEY -Autostart
+```
+
+然后：把 `DEEPSEEK_API_KEY`（和可选的 `ZHIPU_API_KEY`）写进 `~/.dsh/.credentials.yaml` → 重启 `dsh web` → 模型选择器选 **Vision Bridge** 贴图测试 → 跑 `scripts\verify.ps1` 验收。
+
 ## 架构
 
 ```mermaid
